@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resources on Nathan May</title>
+    <link>https://nathanjmay.com/posts/categories/resources/</link>
+    <description>Recent content in Resources on Nathan May</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Jun 2020 06:00:20 +0600</lastBuildDate><atom:link href="https://nathanjmay.com/posts/categories/resources/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Favorite Resources</title>
+      <link>https://nathanjmay.com/posts/categories/resources/favorite/</link>
+      <pubDate>Mon, 08 Jun 2020 06:00:20 +0600</pubDate>
+      
+      <guid>https://nathanjmay.com/posts/categories/resources/favorite/</guid>
+      <description>Favorite Resources General Learning Resources:  Udemy - I use this for just about anything, certifications, new skills, hobbies, it really has everything. Never buy a course at full price, there are always sales where you can get the course for around $20 or less YouTube Channels  HackerSploit for ethical hacking tools/techniques Lawrence Systems for network administration technologies Programming with Mosh for programming tutorials Linus Tech Tips for general hardware information   Podcast  Darknet Diaries (available on Spotify, iTunes, RSS and more) my all time favorite, cool stories about famous hacks, nation state APTs, and stories from notable hackers Unsupervised Learning more technical podcast about modern technology and cybersecurity    Networking:  Study-CCNA in conjunction with Cisco&amp;rsquo;s Packet Tracer can teach you everything you need to know regarding basic networking protocols and network engineering GNS3 - Network focused virtualization platform, more complex than Packet Tracer but supports other vendor platforms  Linux:  OverTheWire - Great place to get started learning basic Linux commands LinuxJourney - Interactive explanation of commands, utilities, processes, services, and all things linux  Windows:  Microsoft Learn - customize your learning track based off of experience and interests UnderTheWire - Interactive way to learn PowerShell  Cybersecurity/Ethical Hacking   TryHackMe - Hacking tutorials for beginners, includes instructions and lessons</description>
+    </item>
+    
+  </channel>
+</rss>

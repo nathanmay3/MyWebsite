@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Meterpreter</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/assets/css/layouts/main.css"/>
+<link rel="stylesheet" href="/assets/css/style.css"/>
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/images/site/light.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css"/>
+
+    
+<meta name="description" content="Meterpreter" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/assets/css/layouts/single.css"/>
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-XXXXXXXXX-X', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+  
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      <img src="/images/site/dark.png">Nathan May</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/images/site/dark.png" class="d-none" id="main-logo">
+  <img src="/images/site/light.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/resources/">Resources</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/resources/favorite/">Favorite Resources</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/ctf-writeups/">CTF Writeups</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/htb-writeups/">HTB Writeups</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/htb-writeups/academy/">Academy</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/projects/">Projects</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/projects/pfsensevpn/">Home VPN Setup with PFSense</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/offensive-tools/">Offensive Tools</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/offensive-tools/meterpreter/">Meterpreter</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/defensive-tools/">Defensive Tools</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/defensive-tools/opencanary/">OpenCanary</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://nathanjmay.com/images/sections/blog/Meterpreter.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author/profile.png'/>
+          <h5 class="author-name">Nathan May</h5>
+          <p>December 13, 2020</p>
+        </div>
+
+        <div class="title">
+          <h1>Meterpreter</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <h4 id="what-is-meterpreter">What is Meterpreter?</h4>
+<p>Meterpreter is an extremely powerful payload which provides an attacker an advanced shell to interact with their target. It  can run normal system commands, launch programs, keylog, screenshare, upload files, and many more powerful functions.</p>
+<h5 id="how-to-get-a-meterpreter-shell-on-a-system">How to get a Meterpreter shell on a system?</h5>
+<p>Many backdoors like Mosquito and Shamoon-2 are preconfigured with Meterpreter as a payload. It was originally created as a Metasploit Payload, so if you can find a system with an exploitable vulnerability just set the payload to a Meterpreter shell. Or, if you already have access to a system, you can generate a payload file using msfvenom to upload and run creating the shell. To demonstrate ways to get a Meterpreter shell and the commands it offers, I have configured the following test environment.</p>
+<p><img src="/images/sections/blog/Meterpreter/layout.png" alt="layout"></p>
+<h4 id="using-meterpreter-as-a-metasploit-payload">Using Meterpreter as a Metasploit payload:</h4>
+<p>In my example environment, I have an attacker box (Kali VM), and a victim box (Windows 7 VM). A fresh install of Windows 7 is by default vulnerable to ms17_010, or EternalBlue. EternalBlue is what I will be using to break in to my target box, but the same is true for whatever vulnerability you plan to exploit as long as it gives you the ability to drop a payload onto the system. Once you have found whatever exploit you want to use against your target system, use the <code>set payload</code> command to choose the meterpreter backdoor that best fits your needs. In my case, I will be using Windows x64 reverse TCP to create a reverse shell back to my host system. Because it is a reverse shell, I need to specify which IP address for the connection to call back to. Using the <code>set rhost</code> command, I entered in the IP address of the attacker device (Kali VM).</p>
+<p><img src="/images/sections/blog/Meterpreter/Meterpreter1.PNG" alt="layout"></p>
+<p>Once you have all the Metasploit options configured, run <code>exploit</code> and if your exploit works correctly you should receive a Meterpreter shell on the last line as you can see below. Later, I will explain some of the powerful features Meterpreter has to offer.</p>
+<p><img src="/images/sections/blog/Meterpreter/Meterpreter2.PNG" alt="layout"></p>
+<h4 id="using-msfvenom-to-generate-a-meterpreter-file-for-the-target-system">Using msfvenom to generate a meterpreter file for the target system:</h4>
+<p>If you already have system access to the victim and want to spawn a Meterpreter shell, an easy way to do that is generate a Meterpreter file using Msfvenom. Msfvenom allows users to output Metasploit payloads into files for different operating systems. In this case, we will be choosing windows/meterpreter/reverse_tcp as the payload, my Kali VM&rsquo;s IP address as the IP to make a connection to, port 3389, and the file type exe which is all then dropped into shell.exe.</p>
+<p><img src="/images/sections/blog/Meterpreter/Msfvenom1.PNG" alt="layout"></p>
+<p>Once you drop this file onto the target host and run it, open up a listener on your attacker device. To do this, use the metasploit listener with the command <code>use multi/handler</code> then configure the options specific to your environment. As you can see on the last line, we have a meterpreter shell once again.</p>
+<p><img src="/images/sections/blog/Meterpreter/Msfvenom2.PNG" alt="layout"></p>
+<h4 id="i-have-a-meterpreter-shell-now-what">I have a Meterpreter shell&hellip; now what?</h4>
+<p>As an attacker, Meterpreter offers some extremely valuable tools. Many of the basic commands are just aliases of common linux/windows commands. So for example, view contents of your current directory, you can use EITHER ls or dir, changed directories with cd, viewing your current directory with pwd, all very familiar commands.</p>
+<p><img src="/images/sections/blog/Meterpreter/nowwhat1.png" alt="layout"></p>
+<p>If you want the environment to become even more familiar, simply execute the <code>shell</code> command and you will drop into the system shell.</p>
+<p><img src="/images/sections/blog/Meterpreter/nowwhat2.PNG" alt="layout"></p>
+<p>Now its time for some more exciting commands.</p>
+<h4 id="sessions">Sessions</h4>
+<p>If you are controlling multiple systems, or just have multiple connections to one host, you can put your current connection to the background and interact with another session. In your current session, type <code>bg</code> or <code>background</code> and you will return to the multi/handler tool. Typing <code>session</code> will show all current connections to your system currently available and each will have a number. To pickup and interact with a session, type <code>session -i (session #)</code>. Here is an example with many connections from the target system:</p>
+<p><img src="/images/sections/blog/Meterpreter/sessions1.PNG" alt="layout"></p>
+<p>Here is an example of a time I had many connections from many targets I was attacking:</p>
+<p><img src="/images/sections/blog/Meterpreter/sessions2.png" alt="layout"></p>
+<h4 id="migrate-processes">Migrate Processes:</h4>
+<p>One of my favorite Meterpreter features is the ability to migrate the process to any other processes running on the system. This is useful because if someone is actively trying to defend/kill your Meterpreter process, you can move to a process like services.exe which is both not a suspicious process, but also critical to the system functioning normally.</p>
+<p>For example, without further obfuscation a default Meterpreter payload running on the system looks like this in Task Manager:</p>
+<p><img src="/images/sections/blog/Meterpreter/migrate1.PNG" alt="layout"></p>
+<p>By stopping that service, our connection would be closed. To avoid this, you can migrate to another service. In this example, I will migrate to <code>explorer.exe</code> which is the process Windows uses for the Users GUI.</p>
+<p>To do this, use <code>ps -a</code> to view all processes running on that system. Take note of the authority the process has as we want to maintain running in a process with system authority.</p>
+<p><img src="/images/sections/blog/Meterpreter/migrate2.PNG" alt="layout"></p>
+<p>Select an appropriate process for your needs, and migrate to that process using <code>migrate (PID number of your process)</code>.</p>
+<p><img src="/images/sections/blog/Meterpreter/migrate3.PNG" alt="layout"></p>
+<p>Now, the Meterpreter shell is using a normal system process which cannot easily be seen. Here, we are running as explorer.exe:</p>
+<p><img src="/images/sections/blog/Meterpreter/migrate4.PNG" alt="layout"></p>
+<h4 id="screenshare">Screenshare:</h4>
+<p>Self explanatory, but Meterpreter allows for screensharing using a Web GUI. This can easily be activated using the <code>screenshare</code> command.</p>
+<p><img src="/images/sections/blog/Meterpreter/screenshare1.PNG" alt="layout"></p>
+<p>On the left is the Kali VM viewing the Windows 7 system (right) through a web browser:</p>
+<p><img src="/images/sections/blog/Meterpreter/screenshare2.PNG" alt="layout"></p>
+<h4 id="keylogging">Keylogging:</h4>
+<p>To keylog a system, you first need to migrate to the process which is receiving the users keystrokes. This is usually one of two processes.</p>
+<ul>
+<li>
+<p>explorer.exe - user interface with desktop and other applications, used to keylog most user interaction</p>
+</li>
+<li>
+<p>winlogon.exe - windows logon screen, used to capture logon credentials</p>
+</li>
+</ul>
+<p>Migrate to the process you want to keylog, then run <code>keyscan start</code> to begin logging user input. Once you want to collect the logged items, type <code>keyscan dump</code> and all the users keystrokes will be dumped to your screen.  In this example, I will keylog the system while a user enters their banking credentials onto a web browser.</p>
+<p><img src="/images/sections/blog/Meterpreter/keylog1.PNG" alt="layout"></p>
+<p><img src="/images/sections/blog/Meterpreter/keylog2.PNG" alt="layout"></p>
+<p>After running keyscan_start, waiting for the user to enter credentials, then keyscan_dump, drops the credentials clearly in plaintext. If you prefer to save the keystrokes to a file automatically every 30 seconds in case the session gets interrupted or you may need to store/search the keystrokes, use `post/</p>
+<p><img src="/images/sections/blog/Meterpreter/keylog3.PNG" alt="layout"></p>
+<h4 id="clear-event-viewer">Clear Event Viewer</h4>
+<p>As a system administrator, logs are critical to identifying system compromise and anomalies. An attacker can easily wipe the Windows Event Viewer logs with a simple command.</p>
+<p>Logs before wiping:</p>
+<p><img src="/images/sections/blog/Meterpreter/ev1.PNG" alt="layout"></p>
+<p>Wiping the logs:</p>
+<p><img src="/images/sections/blog/Meterpreter/ev2.PNG" alt="layout"></p>
+<p>Logs wiped on system:</p>
+<p><img src="/images/sections/blog/Meterpreter/ev3.PNG" alt="layout"></p>
+<h4 id="transfer-files">Transfer Files</h4>
+<p>Using the <code>upload</code> command, you can upload a file from your attacker to the victim host. Using the <code>download</code> command you can download a file from the victim host to your attacker device.</p>
+<p>Syntax:</p>
+<p><code>download c:\\path\to\file.exe</code></p>
+<p><code>upload /path/on/attacker c:\\path\on\victim</code></p>
+<p><img src="/images/sections/blog/Meterpreter/uploaddownload.PNG" alt="layout"></p>
+<h4 id="dump-account-hashes">Dump Account Hashes</h4>
+<p>To crack other user accounts, the hashes of other user accounts can easily be viewed using the <code>hashdump</code> command.</p>
+<p><img src="/images/sections/blog/Meterpreter/hashdump.PNG" alt="layout"></p>
+<h4 id="get-system-privileges">Get System Privileges</h4>
+<p>If you migrate to a process that does not have system privileges, you can attempt to escalate back to that authority using <code>getsystem</code>.</p>
+<p><img src="/images/sections/blog/Meterpreter/getsystem.PNG" alt="layout"></p>
+<h4 id="webcam-control">Webcam Control</h4>
+<p>Perhaps one of the most invasive and scary features of Meterpreter is the ability to detect webcams on the target, and then capture pictures using the webcam. Unfortunately, the VM I am demonstrating on does not have any webcam configured; however, the commands are fairly self explanatory.</p>
+<p><img src="/images/sections/blog/Meterpreter/webcam.PNG" alt="layout"></p>
+<h4 id="plant-persistence">Plant Persistence</h4>
+<p>To ensure future access to the system, you can plant persistence on your current Meterpreter session. To do this, first background the session and take note of the session number. Then <code>use exploit/widows/local/persistence</code> and set the parameters to your session number, in this example 3, and the local port for the persistence to call back to. After running <code>exploit</code> persistence will be planted so that on system boot, a reverse shell will be initiated from the compromised system.</p>
+<p><img src="/images/sections/blog/Meterpreter/persist1.PNG" alt="layout"></p>
+<p>To pick up on this reverse shell, once again use multi/handler, with meterpreter as the payload, and the proper listening port. Once listening by running exploit, once the Windows system reboots a new session will be created between the attacker and the victim.</p>
+<p><img src="/images/sections/blog/Meterpreter/persist2.PNG" alt="layout"></p>
+<h4 id="other-resources">Other resources</h4>
+<p>Meterpreter is extremely powerful and there are many more commands than those I highlighted in this post. Here are some additional resources for ways to weaponize Meterpreter:</p>
+<p><a href="https://www.blueliv.com/downloads/Meterpreter_cheat_sheet_v0.1.pdf">Meterpreter Cheat Sheet</a></p>
+<p><a href="https://www.offensive-security.com/metasploit-unleashed/meterpreter-basics/">Offensive Security Writeup</a></p>
+<p><a href="https://www.hackingarticles.in/courses-we-offer/web-penetration-testing-bug-bounty/">Persistence Methods</a></p>
+
+        </div>
+
+
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+    
+      
+      <div class="col-md-6 previous-article">
+        <a href="/posts/htb-writeups/academy/" class="btn btn-outline-info">
+          <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+          <br />
+          <span>Academy</span>
+        </a>
+      </div>
+      
+    
+    
+      
+        
+        
+          
+              
+          
+        
+        <div class="col-md-6 next-article">
+          <a href="/posts/resources/favorite/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>My Favorite Resources</span>
+          </a>
+        </div>
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#what-is-meterpreter">What is Meterpreter?</a>
+              <ul>
+                <li><a href="#how-to-get-a-meterpreter-shell-on-a-system">How to get a Meterpreter shell on a system?</a></li>
+              </ul>
+            </li>
+            <li><a href="#using-meterpreter-as-a-metasploit-payload">Using Meterpreter as a Metasploit payload:</a></li>
+            <li><a href="#using-msfvenom-to-generate-a-meterpreter-file-for-the-target-system">Using msfvenom to generate a meterpreter file for the target system:</a></li>
+            <li><a href="#i-have-a-meterpreter-shell-now-what">I have a Meterpreter shell&hellip; now what?</a></li>
+            <li><a href="#sessions">Sessions</a></li>
+            <li><a href="#migrate-processes">Migrate Processes:</a></li>
+            <li><a href="#screenshare">Screenshare:</a></li>
+            <li><a href="#keylogging">Keylogging:</a></li>
+            <li><a href="#clear-event-viewer">Clear Event Viewer</a></li>
+            <li><a href="#transfer-files">Transfer Files</a></li>
+            <li><a href="#dump-account-hashes">Dump Account Hashes</a></li>
+            <li><a href="#get-system-privileges">Get System Privileges</a></li>
+            <li><a href="#webcam-control">Webcam Control</a></li>
+            <li><a href="#plant-persistence">Plant Persistence</a></li>
+            <li><a href="#other-resources">Other resources</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+
+  
+
+
+
+
+  
+
+
+
+
+  
+  
+    
+  
+
+
+<footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#about">About</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#skills">Skills</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#experiences">Experiences</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#projects">Projects</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#skills2">Competitions/CTFs</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#recent-posts">Recent Posts</a>
+              </li>
+            
+        </ul>
+        
+
+      </div>
+      
+      <div class="col-md-4 col-sm-12">
+        <h5></h5>
+        <ul>
+          
+        </ul>
+      </div>
+      
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2020 Copyright.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/assets/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>

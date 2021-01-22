@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTB Writeups on Nathan May</title>
+    <link>https://nathanjmay.com/posts/htb-writeups/</link>
+    <description>Recent content in HTB Writeups on Nathan May</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Jan 2021 06:00:20 +0600</lastBuildDate><atom:link href="https://nathanjmay.com/posts/htb-writeups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Academy</title>
+      <link>https://nathanjmay.com/posts/htb-writeups/academy/</link>
+      <pubDate>Sat, 02 Jan 2021 06:00:20 +0600</pubDate>
+      
+      <guid>https://nathanjmay.com/posts/htb-writeups/academy/</guid>
+      <description>Academy Academy is still an active box and cannot have public writeups. To unlock the writeup, the password is the first 10 characters of the /etc/shadow entry for root following &amp;ldquo;root:&amp;rdquo;.
+Academy.pdf</description>
+    </item>
+    
+  </channel>
+</rss>

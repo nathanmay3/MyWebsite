@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home VPN Setup with PFSense</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/assets/css/layouts/main.css"/>
+<link rel="stylesheet" href="/assets/css/style.css"/>
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/images/site/light.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css"/>
+
+    
+<meta name="description" content="Home VPN Setup with PFSense" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/assets/css/layouts/single.css"/>
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-XXXXXXXXX-X', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+  
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      <img src="/images/site/dark.png">Nathan May</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/images/site/dark.png" class="d-none" id="main-logo">
+  <img src="/images/site/light.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/resources/">Resources</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/resources/favorite/">Favorite Resources</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/ctf-writeups/">CTF Writeups</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/htb-writeups/">HTB Writeups</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/htb-writeups/academy/">Academy</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/projects/">Projects</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/projects/pfsensevpn/">Home VPN Setup with PFSense</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/offensive-tools/">Offensive Tools</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/offensive-tools/meterpreter/">Meterpreter</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/defensive-tools/">Defensive Tools</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/defensive-tools/opencanary/">OpenCanary</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://nathanjmay.com/images/sections/blog/vpn.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author/profile.png'/>
+          <h5 class="author-name">Nathan May</h5>
+          <p>January 15, 2021</p>
+        </div>
+
+        <div class="title">
+          <h1>Home VPN Setup with PFSense</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <h3 id="introduction">Introduction</h3>
+<p>Setting up PFSense as a VPS within your home environment will provide several benefits. First, all your home network traffic will be protected by a well developed and capable next generation firewall. <a href="https://www.pfsense.org/">PFSense</a> has been around since 2006 and has continued to grow in support and development making it an extremely advanced open source security solution. Although I will not go into it within this post, PFSense has a package manager that can be used to install additional tools like Snort, Suricata, pfBlocker, Squid and more.  Second, it will allow you to access your home network from anywhere in the world. This will allow you to reach any home file servers and remote control systems via RDP or SSH. Finally, you can configure the VPN to route all traffic through the PFSense firewall, so all your connections from across the world can be secured by your home firewall and any packages you have installed. All of this for no montly cost as everything in this guide is either open source or a free service.</p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>PFSense Firewall - I am using <a href="https://www.amazon.com/Firewall-Appliance-Gigabit-Celeron-AES-NI/dp/B07G9NHRGQ">this</a> for my setup as AES-NI is recommended and the specs are adequate for my purposes</li>
+<li>ISP that gives you a public IP address (static OR dynamic) and doesn&rsquo;t mind you port forwarding</li>
+<li>WiFi Access Point to give devices connectivity</li>
+<li>Familiarity with networking and installing an operating system to a device</li>
+</ul>
+<h3 id="set-up-a-dynamic-dns-account">Set Up a Dynamic DNS Account</h3>
+<p>This is only for those that do not pay for a static public IP address. If you are unsure, you likely have a dynamic address. I will be using <a href="https://freedns.afraid.org">FreeDNS</a> as it is simple to configure for this purpose and free. After making your account, create a subdomain A record.</p>
+<p><img src="/images/sections/blog/PFSenseVPN/freedns.png" alt="layout"></p>
+<p>Then, go to Dynamic DNS in the menu.  Copy the &ldquo;Direct URL&rdquo; for your A record. You will see something like <a href="https://freedns.afraid.org/dynamic/update.php?YOUR_CODE_HERE">https://freedns.afraid.org/dynamic/update.php?YOUR_CODE_HERE</a>. Copy only your code and save it for later.</p>
+<h3 id="installing-pfsense">Installing PFSense</h3>
+<p>First thing you will need to do is install PFSense onto whatever Firewall you will be using. As this is pretty dependent on the Firewall you have chosen I will not go into great detail but use the downloads provided <a href="https://www.pfsense.org/download/">here</a>. Once you have PFSense installed onto the Firewall, connect to the console port to access the PFSense CLI configuration menu.</p>
+<p><img src="/images/sections/blog/PFSenseVPN/cli.jpg" alt="layout"></p>
+<p>Go through the initial steps of assigning the interfaces for LAN and WAN (option 1), and setting up interface IP addresses (option 2). It is important to either assign yourself a static IP address in the WAN subnet, or setup a DHCP reservation on your modem. This will allow port forwarding to work properly. Once these are configured, you will be able to access the web GUI through the LAN IP address which will prompt you with a login as seen below.</p>
+<p><img src="/images/sections/blog/PFSenseVPN/webgui.PNG" alt="layout"></p>
+<p>Login with the default credentials (user:admin password:pfsense) to begin setting up the firewall.</p>
+<h3 id="connect-your-dynamic-dns-server">Connect Your Dynamic DNS Server</h3>
+<p>Within PFSense, go to Services -&gt; Dynamic DNS and select Add under Dynamic DNS Clients. If you are using a different Dynamic DNS provider than FreeDNS, look up how to add your dynamic DNS into PFSense. For freeDNS, select &ldquo;freeDNS&rdquo; as an option in the service type dropdown menu. Use WAN as the interface and type the full hostname into the hostname parameter. See below for an example:</p>
+<p><img src="/images/sections/blog/PFSenseVPN/dyndns.PNG" alt="layout"></p>
+<p>Use the token from earlier steps creating the freeDNS account and enter it into the password and confirm password parameters. Then save and you should now see your hostname in the Dynamic DNS configuration page with your IP address in green showing it has been updated.</p>
+<h3 id="create-your-vps">Create Your VPS</h3>
+<p>To begin setup, go to VPN -&gt; OpenVPN -&gt; Wizards and go through the wizard creating a VPS for Local User Access. The wizard takes you through the main steps, configuring a Certificate Authority (CA), create a Server Certificate using that CA, then configure OpenVPN Server information. When configuring OpenVPN Server information, you will need to select a port/protocol, create a tunnel network, and specify the local network subnet. You may also need to modify the NCP algorithms to support connecting devices.</p>
+<p><img src="/images/sections/blog/PFSenseVPN/wizard.PNG" alt="layout"></p>
+<p>For example, you may want all VPN users to have an address 172.16.0.0/24 and allow them access to your home network at 10.0.1.0/24. Select &ldquo;Redirect Gateway&rdquo; if you want to force all traffic through the VPN, this will enforce any firewall/IPS protection to your remote devices. Additionally, you may want to enable Dynamic IP to help keep clients connected while they are on the move.</p>
+<p><img src="/images/sections/blog/PFSenseVPN/wizard2.PNG" alt="layout"></p>
+<p>In the last step, select both options to create firewall rules that allow your VPN to operate properly.</p>
+<h3 id="create-users">Create Users</h3>
+<p>To create users, go to System -&gt; User Manager and click add. Enter information for that user and select the Certificate checkbox. Use the VPN certificate authority to generate a client certificate. This will allow the user to connect to the VPN. Repeat to create all the users you would like to have access to the VPN.</p>
+<h3 id="export-client-configurations">Export Client Configurations</h3>
+<p>Go to System -&gt; Package Manager -&gt; Available Packages and install openvpn-client-export. When the install finishes, go to VPN -&gt; OpenVPN and you should see a new submenu labeled Client Export. Select the VPN configured previously for Remote Access Server, and the Dynamic DNS hostname. Additionally, you will want to check Use Random Local Port to ensure multiple clients can run at the same time. Save these settings so they will be used for all future client exports. <img src="C:%5CUsers%5CNate%5CDesktop%5Cpf%5Cclient.PNG" alt=""></p>
+<p>Scrolling to the bottom will show all the users configured for that VPN as well as options to export a config file for various platforms/operating systems. <img src="C:%5CUsers%5CNate%5CDesktop%5Cpf%5Cclientexport.PNG" alt=""></p>
+<p>Download these configurations and send them to the people you want to connect, as well as their username and password configured earlier.</p>
+<h3 id="port-forward">Port Forward</h3>
+<p>To allow VPN traffic to the PFSense Firewall, port forwarding is required on the modem. By default, OpenVPN uses UDP 1194; however, some ISPs may restrict the ports you are actually allowed to forward. If this is the case, TCP 443 is usually allowed as it is the port HTTPS uses.</p>
+<p>Go to your modem configuration page and setup port forwarding. Point the server IP to your PFSense WAN IP address and the TCP or UDP port chosen. Here is an example configuration on a Comcast modem.</p>
+<p><img src="/images/sections/blog/PFSenseVPN/portforward.PNG" alt="layout"></p>
+<h3 id="connect-remotely">Connect Remotely</h3>
+<p>Download the OpenVPN app on whatever device you use and import your configuration file. That&rsquo;s it! You can now connect from anywhere in the world back to your home network. This setup can continue to be improved by taking advantage of other PFSense features like Snort, Squid, pfBlocker and others. I highly recommend you attempt to take full advantage of what PFSense has to offer by configuring strict firewall rules and utilizing the more advanced packages.</p>
+
+        </div>
+
+
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+    
+      
+      <div class="col-md-6 previous-article">
+        <a href="/posts/defensive-tools/opencanary/" class="btn btn-outline-info">
+          <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+          <br />
+          <span>OpenCanary</span>
+        </a>
+      </div>
+      
+    
+    
+      
+        
+        
+          
+              
+          
+        
+        <div class="col-md-6 next-article">
+          <a href="/posts/htb-writeups/academy/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>Academy</span>
+          </a>
+        </div>
+      
+    
+  
+
+  
+
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#set-up-a-dynamic-dns-account">Set Up a Dynamic DNS Account</a></li>
+        <li><a href="#installing-pfsense">Installing PFSense</a></li>
+        <li><a href="#connect-your-dynamic-dns-server">Connect Your Dynamic DNS Server</a></li>
+        <li><a href="#create-your-vps">Create Your VPS</a></li>
+        <li><a href="#create-users">Create Users</a></li>
+        <li><a href="#export-client-configurations">Export Client Configurations</a></li>
+        <li><a href="#port-forward">Port Forward</a></li>
+        <li><a href="#connect-remotely">Connect Remotely</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+
+  
+
+
+
+
+  
+
+
+
+
+  
+  
+    
+  
+
+
+<footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#about">About</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#skills">Skills</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#experiences">Experiences</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#projects">Projects</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#skills2">Competitions/CTFs</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#recent-posts">Recent Posts</a>
+              </li>
+            
+        </ul>
+        
+
+      </div>
+      
+      <div class="col-md-4 col-sm-12">
+        <h5></h5>
+        <ul>
+          
+        </ul>
+      </div>
+      
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2020 Copyright.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/assets/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>

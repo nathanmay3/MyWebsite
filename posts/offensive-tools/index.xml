@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Offensive Tools on Nathan May</title>
+    <link>https://nathanjmay.com/posts/offensive-tools/</link>
+    <description>Recent content in Offensive Tools on Nathan May</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Dec 2020 06:00:20 +0600</lastBuildDate><atom:link href="https://nathanjmay.com/posts/offensive-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Meterpreter</title>
+      <link>https://nathanjmay.com/posts/offensive-tools/meterpreter/</link>
+      <pubDate>Sun, 13 Dec 2020 06:00:20 +0600</pubDate>
+      
+      <guid>https://nathanjmay.com/posts/offensive-tools/meterpreter/</guid>
+      <description>What is Meterpreter? Meterpreter is an extremely powerful payload which provides an attacker an advanced shell to interact with their target. It can run normal system commands, launch programs, keylog, screenshare, upload files, and many more powerful functions.
+How to get a Meterpreter shell on a system? Many backdoors like Mosquito and Shamoon-2 are preconfigured with Meterpreter as a payload. It was originally created as a Metasploit Payload, so if you can find a system with an exploitable vulnerability just set the payload to a Meterpreter shell.</description>
+    </item>
+    
+  </channel>
+</rss>

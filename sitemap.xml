@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/</loc>
+    <lastmod>2021-01-21T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/defensive-tools/</loc>
+    <lastmod>2021-01-21T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/</loc>
+    <lastmod>2021-01-21T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/defensive-tools/opencanary/</loc>
+    <lastmod>2021-01-21T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/projects/pfsensevpn/</loc>
+    <lastmod>2021-01-15T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/projects/</loc>
+    <lastmod>2021-01-15T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/htb-writeups/academy/</loc>
+    <lastmod>2021-01-02T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/htb-writeups/</loc>
+    <lastmod>2021-01-02T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/offensive-tools/meterpreter/</loc>
+    <lastmod>2020-12-13T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/resources/favorite/</loc>
+    <lastmod>2020-12-13T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/offensive-tools/</loc>
+    <lastmod>2020-12-13T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/resources/</loc>
+    <lastmod>2020-12-13T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/ctf-writeups/</loc>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/tags/</loc>
+  </url>
+  
+</urlset>

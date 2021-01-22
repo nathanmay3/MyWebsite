@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Nathan May</title>
+    <link>https://nathanjmay.com/posts/projects/</link>
+    <description>Recent content in Projects on Nathan May</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Jan 2021 06:00:20 +0600</lastBuildDate><atom:link href="https://nathanjmay.com/posts/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Home VPN Setup with PFSense</title>
+      <link>https://nathanjmay.com/posts/projects/pfsensevpn/</link>
+      <pubDate>Fri, 15 Jan 2021 06:00:20 +0600</pubDate>
+      
+      <guid>https://nathanjmay.com/posts/projects/pfsensevpn/</guid>
+      <description>Introduction Setting up PFSense as a VPS within your home environment will provide several benefits. First, all your home network traffic will be protected by a well developed and capable next generation firewall. PFSense has been around since 2006 and has continued to grow in support and development making it an extremely advanced open source security solution. Although I will not go into it within this post, PFSense has a package manager that can be used to install additional tools like Snort, Suricata, pfBlocker, Squid and more.</description>
+    </item>
+    
+  </channel>
+</rss>

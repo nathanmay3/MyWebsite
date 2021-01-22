@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Defensive Tools on Nathan May</title>
+    <link>https://nathanjmay.com/posts/defensive-tools/</link>
+    <description>Recent content in Defensive Tools on Nathan May</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Jan 2021 06:00:20 +0600</lastBuildDate><atom:link href="https://nathanjmay.com/posts/defensive-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenCanary</title>
+      <link>https://nathanjmay.com/posts/defensive-tools/opencanary/</link>
+      <pubDate>Thu, 21 Jan 2021 06:00:20 +0600</pubDate>
+      
+      <guid>https://nathanjmay.com/posts/defensive-tools/opencanary/</guid>
+      <description>What is OpenCanary? OpenCanary is the free open source version of Canary, a popular and advanced honeypot. OpenCanary takes a different approach to intrusion detection. Instead of monitoring network traffic for known malicious actions and signatures, OpenCanary is system meant to be attractive to attackers that will alert an administrator when an attack is detected.
+Problems With Typical IDS If you have ever run an IDS like Snort, Suricata, Palo Alto, or similar, you know they flag a lot of traffic and make a lot of noise.</description>
+    </item>
+    
+  </channel>
+</rss>

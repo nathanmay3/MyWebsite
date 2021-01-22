@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenCanary</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/assets/css/layouts/main.css"/>
+<link rel="stylesheet" href="/assets/css/style.css"/>
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/images/site/light.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css"/>
+
+    
+<meta name="description" content="OpenCanary" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/assets/css/layouts/single.css"/>
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-XXXXXXXXX-X', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+  
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      <img src="/images/site/dark.png">Nathan May</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/images/site/dark.png" class="d-none" id="main-logo">
+  <img src="/images/site/light.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/resources/">Resources</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/resources/favorite/">Favorite Resources</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/ctf-writeups/">CTF Writeups</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/htb-writeups/">HTB Writeups</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/htb-writeups/academy/">Academy</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/projects/">Projects</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/projects/pfsensevpn/">Home VPN Setup with PFSense</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/offensive-tools/">Offensive Tools</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/offensive-tools/meterpreter/">Meterpreter</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/defensive-tools/">Defensive Tools</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/defensive-tools/opencanary/">OpenCanary</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://nathanjmay.com/images/sections/blog/canary.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author/profile.png'/>
+          <h5 class="author-name">Nathan May</h5>
+          <p>January 21, 2021</p>
+        </div>
+
+        <div class="title">
+          <h1>OpenCanary</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <h3 id="what-is-opencanary">What is OpenCanary?</h3>
+<p><a href="https://opencanary.readthedocs.io/en/latest/">OpenCanary</a> is the free open source version of <a href="https://canary.tools/">Canary</a>, a popular and advanced honeypot. OpenCanary takes a different approach to intrusion detection. Instead of monitoring network traffic for known malicious actions and signatures, OpenCanary is system meant to be attractive to attackers that will alert an administrator when an attack is detected.</p>
+<h3 id="problems-with-typical-ids">Problems With Typical IDS</h3>
+<p>If you have ever run an IDS like Snort, Suricata, Palo Alto, or similar, you know they flag a lot of traffic and make a lot of noise. Without fine-tuning the IDS properly, any legitimate warnings will be drowned in a mass of false positives and non-critical alerts. But even if the IDS administrator properly configures the system to decrease the alerts, there are still ways attackers can bypass an IDS. An attacker may use an unrecognizable zero day exploit, obfuscate their code, already be physically located inside with direct LAN access or leverage authentic means of remote access like a VPN to get access to a network without an IDS flagging the traffic.</p>
+<h3 id="opencanarys-solution">OpenCanary&rsquo;s Solution</h3>
+<p>Thinking like an attacker, once they somehow manage to get a foothold into a network, they often attempt to pivot to other systems and gain as much control as possible. In many security breaches reviewed, the hackers had been active within the target&rsquo;s network for weeks or longer laterally moving throughout the network. OpenCanary attempts to identify attackers that have managed to gain access by presenting itself as a target for the attacker. OpenCanary can host a variety of services like HTTP, SQL and FTP. When an attacker attempts to enumerate and exploit the OpenCanary services, notifications are sent to announce the intrusion attempt. Because of the level of interaction required to trigger an OpenCanary alert, false positives are extremely unlikely. Unless you happen to have an inquisitive tech savvy employee enumerating your network, alerts from the OpenCanary likely mean an attacker is actively within your network attempting to expand control.</p>
+<h3 id="my-lab-setup">My Lab Setup</h3>
+<p>To try out OpenCanary, I am using Ubuntu 20.10 as my OpenCanary system and Kali 2020.3 as my &ldquo;attacker&rdquo;. Both of these systems are deployed using VirtualBox and configured within the same NAT network so they will have LAN communication.</p>
+<p><img src="/images/sections/blog/OpenCanary/lab.png" alt="layout"></p>
+<h3 id="installation-steps">Installation Steps</h3>
+<p>Update and install Python &amp; other dependencies</p>
+<pre><code>sudo apt update &amp;&amp; sudo apt upgrade &amp;&amp; sudo apt dist-upgrade
+
+sudo apt install python3-dev python3-pip python3-virtualenv
+sudo apt install build-essential libssl-dev libffi-dev libpcap0.8-dev
+</code></pre><p>Create a directory for OpenCanary and create a python virtual environment</p>
+<pre><code>mkdir yourdirectory
+cd yourdirectory
+virtualenv env/
+. env/bin/activate
+</code></pre><p>Install Python packages</p>
+<pre><code>pip install opencanary
+pip install scapy
+pip install pcapy
+pip install rdpy
+</code></pre><p>Create the config file</p>
+<pre><code>opencanaryd --copyconfig
+nano /etc/opencanardy/opencanary.conf
+</code></pre><p>Here, you can select which services you want to enable by changing the entry to &ldquo;true&rdquo;.</p>
+<p><img src="/images/sections/blog/OpenCanary/options.PNG" alt="layout"></p>
+<p>I recommend logging be set up using syslog using this configuration:</p>
+<pre><code>            &quot;syslog-unix&quot;: {
+                &quot;class&quot;: &quot;logging.handlers.SysLogHandler&quot;,
+                &quot;formatter&quot;:&quot;syslog_rfc&quot;,
+                &quot;address&quot;: [
+                    &quot;localhost&quot;,
+                    514
+                ],
+</code></pre><p>I will be using SMTP logging because I do not have a syslog server setup in this virtual environment:</p>
+<pre><code>        &quot;handlers&quot;: {
+            &quot;SMTP&quot;: {
+                &quot;class&quot;: &quot;logging.handlers.SMTPHandler&quot;,
+                &quot;mailhost&quot;: [&quot;smtp.gmail.com&quot;, 587],
+                &quot;fromaddr&quot;: &quot;noreply@yourdomain.com&quot;,
+                &quot;toaddrs&quot; : [&quot;youraddress@gmail.com&quot;],
+                &quot;subject&quot; : &quot;OpenCanary Alert&quot;,
+                &quot;credentials&quot; : [&quot;youraddress&quot;, &quot;abcdefghijklmnop&quot;],
+                &quot;secure&quot; : []
+             }
+         }
+     }
+ }
+</code></pre><p>Once everything is configured as you want, use</p>
+<pre><code>opencanaryd --start
+</code></pre><p>to start the service. You should soon receive an alert stating OpenCanary is running and a notification for each service started.</p>
+<p><img src="/images/sections/blog/OpenCanary/email.PNG" alt="layout"></p>
+<p>Simulating an attacker enumerating a device, I scanned the host and then tried to login to the discovered service:</p>
+<p><img src="/images/sections/blog/OpenCanary/ftpfail.PNG" alt="layout"></p>
+<p>As expected, I soon received an email notifying me of both the nmap scan and the failed login attempt:</p>
+<p><img src="/images/sections/blog/OpenCanary/notify.PNG" alt="layout">
+I then spent some time testing different enumeration/exploitation methods to see if OpenCanary would detect it and was impressed with the accuracy of alerts as well as the details within the alerts. Even if an attacker manages to take control of the OpenCanary device, OpenCanary will be able to send a few warning alerts before it is compromised.</p>
+<h3 id="review">Review</h3>
+<h4 id="things-i-like">Things I like</h4>
+<ul>
+<li>Lots of service options to choose from</li>
+<li>Variety of logging options</li>
+<li>Low false-positive rate</li>
+<li>Free way to detect threats when they matter most</li>
+</ul>
+<h4 id="things-i-dont-like">Things I don&rsquo;t like</h4>
+<ul>
+<li>You may need to create a new email to send alerts from</li>
+<li>Email credentials stored in plain-text in configuration file</li>
+<li>Setup is not super intuitive &amp; you may need to engineer your own way to automate startup</li>
+</ul>
+<h3 id="configuration-tips">Configuration Tips</h3>
+<ul>
+<li>Avoid the services that may be recognized as OpenCanary (for example, the HTTP DiskStation login may be a give away if the attacker is familiar with OpenCanary)</li>
+<li>Avoid services with conflicting Operating System identifiers</li>
+<li>Fewer services will generate fewer alerts, try sticking to one or two and always monitor the alerts</li>
+<li>Enabling scan detection will likely generate too much traffic to be taken seriously (most scans will already generate logs because of the fingerprinting methods used)</li>
+</ul>
+
+        </div>
+
+
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+      
+        
+        
+        <div class="col-md-12 next-article">
+          <a href="/posts/projects/pfsensevpn/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>Home VPN Setup with PFSense</span>
+          </a>
+        </div>
+      
+    
+  
+
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#what-is-opencanary">What is OpenCanary?</a></li>
+        <li><a href="#problems-with-typical-ids">Problems With Typical IDS</a></li>
+        <li><a href="#opencanarys-solution">OpenCanary&rsquo;s Solution</a></li>
+        <li><a href="#my-lab-setup">My Lab Setup</a></li>
+        <li><a href="#installation-steps">Installation Steps</a></li>
+        <li><a href="#review">Review</a>
+          <ul>
+            <li><a href="#things-i-like">Things I like</a></li>
+            <li><a href="#things-i-dont-like">Things I don&rsquo;t like</a></li>
+          </ul>
+        </li>
+        <li><a href="#configuration-tips">Configuration Tips</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+
+  
+
+
+
+
+  
+
+
+
+
+  
+  
+    
+  
+
+
+<footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#about">About</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#skills">Skills</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#experiences">Experiences</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#projects">Projects</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#skills2">Competitions/CTFs</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#recent-posts">Recent Posts</a>
+              </li>
+            
+        </ul>
+        
+
+      </div>
+      
+      <div class="col-md-4 col-sm-12">
+        <h5></h5>
+        <ul>
+          
+        </ul>
+      </div>
+      
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2020 Copyright.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/assets/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>
