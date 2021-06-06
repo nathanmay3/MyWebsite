@@ -6,7 +6,18 @@
     <description>Recent content on Nathan May</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jan 2021 06:00:20 +0600</lastBuildDate><atom:link href="https://nathanjmay.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Jun 2021 06:00:20 +0600</lastBuildDate><atom:link href="https://nathanjmay.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My PenTest&#43; Experience</title>
+      <link>https://nathanjmay.com/posts/resources/pentest/</link>
+      <pubDate>Sun, 06 Jun 2021 06:00:20 +0600</pubDate>
+      
+      <guid>https://nathanjmay.com/posts/resources/pentest/</guid>
+      <description>About the PenTest+ Exam: The PenTest+ is among the more intermediate certifications offered by CompTIA and focuses primarily on penetration testing techniques and methodology. The exam has both practical hands on questions as well as traditional multiple choice questions to test both the knowledge and capability of testers.
+It is broken up into 5 primary sections
+ Planning and Scoping - 15% Information Gathering and Vulnerability Scanning - 22% Attacks and Exploits - 30% Penetration Testing Tools - 17% Reporting and Communication - 16%  For a quick comparison to other offensive side cyber certifications, it is generally regarded as being more difficult and hands on than the Certified Ethical Hacker (CEH), and less difficult/hands on than the eLearnSecurity Junior Penetration Tester (eJPT).</description>
+    </item>
+    
     <item>
       <title>OpenCanary</title>
       <link>https://nathanjmay.com/posts/defensive-tools/opencanary/</link>

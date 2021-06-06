@@ -4,16 +4,26 @@
   
   <url>
     <loc>https://nathanjmay.com/posts/</loc>
-    <lastmod>2021-01-21T06:00:20+06:00</lastmod>
+    <lastmod>2021-06-06T06:00:20+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://nathanjmay.com/posts/defensive-tools/</loc>
-    <lastmod>2021-01-21T06:00:20+06:00</lastmod>
+    <loc>https://nathanjmay.com/posts/resources/pentest/</loc>
+    <lastmod>2021-06-06T06:00:20+06:00</lastmod>
   </url>
   
   <url>
     <loc>https://nathanjmay.com/</loc>
+    <lastmod>2021-06-06T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/resources/</loc>
+    <lastmod>2021-06-06T06:00:20+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nathanjmay.com/posts/defensive-tools/</loc>
     <lastmod>2021-01-21T06:00:20+06:00</lastmod>
   </url>
   
@@ -54,11 +64,6 @@
   
   <url>
     <loc>https://nathanjmay.com/posts/resources/favorite/</loc>
-    <lastmod>2020-12-13T06:00:20+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nathanjmay.com/posts/resources/</loc>
     <lastmod>2020-12-13T06:00:20+06:00</lastmod>
   </url>
   
